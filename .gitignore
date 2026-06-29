@@ -1,0 +1,74 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+!frontend/src/lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+
+# Local config
+.env
+.env.local
+.env.*.local
+key.txt
+
+# Logs
+*.log
+.runtime/
+.runtime-openapi-test/
+
+# Local OpenAPI source files
+/KB_BaaS 2.0 Dev (B2B).postman_collection/
+/trx_b2b/
+
+# Local verification artifacts
+home-*-check.png
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Tool configs
+.serena/
+.claude/
+
+# Node (frontend)
+node_modules/
+.next/
+.vercel
+
+# uv
+.python-version
+
+# Local package caches
+.npm-cache/
+.pip-cache/

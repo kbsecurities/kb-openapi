@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-label="KB OpenAPI">
+  <rect width="256" height="256" rx="52" fill="#FFB81C"/>
+  <rect x="24" y="24" width="208" height="208" rx="36" fill="#FFCC32"/>
+  <path d="M58 72h25v51l45-51h32l-48 53 51 59h-34l-46-54v54H58V72Z" fill="#111111"/>
+  <path d="M156 72h35c25 0 42 12 42 32 0 12-7 22-20 27 15 4 24 14 24 29 0 22-18 34-45 34h-36V72Zm34 49c12 0 19-5 19-15 0-9-7-14-19-14h-10v29h10Zm2 53c13 0 21-6 21-16 0-11-8-16-21-16h-12v32h12Z" fill="#111111"/>
+  <path d="M54 205h148" stroke="#111111" stroke-width="12" stroke-linecap="round"/>
+</svg>

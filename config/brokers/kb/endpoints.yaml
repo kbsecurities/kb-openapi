@@ -1,0 +1,56 @@
+broker: kb
+version: "manual"
+source: "KB OpenAPI production configuration"
+base_urls:
+  production: "https://developer.kbsec.com:32484"
+auth:
+  token:
+    method: "POST"
+    path: "/oauth2/token"
+    required_headers:
+      - "Content-Type"
+    required_body:
+      - "clientId"
+      - "clientSecret"
+      - "grantType"
+features:
+  quote:
+    method: ""
+    path: ""
+    required_headers: []
+    required_params: []
+  orderbook:
+    method: ""
+    path: ""
+    required_headers: []
+    required_params: []
+  daily_bars:
+    method: ""
+    path: ""
+    required_headers: []
+    required_params: []
+  balance:
+    method: ""
+    path: ""
+    required_headers: []
+    required_params: []
+  holdings:
+    method: ""
+    path: ""
+    required_headers: []
+    required_params: []
+  buyable_amount:
+    method: ""
+    path: ""
+    required_headers: []
+    required_params: []
+  place_order:
+    method: ""
+    path: ""
+    required_headers: []
+    required_body: []
+  cancel_order:
+    method: ""
+    path: ""
+    required_headers: []
+    required_body: []
