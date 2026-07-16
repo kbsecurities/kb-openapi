@@ -43,6 +43,7 @@ key.txt
 # Logs
 *.log
 .runtime/
+.runtime-openapi/
 .runtime-openapi-test/
 
 # Local OpenAPI source files

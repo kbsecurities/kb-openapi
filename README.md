@@ -4,8 +4,8 @@ KB OpenAPI B2C 운영 연동을 로컬에서 확인하기 위한 Next.js + FastA
 
 ## Run
 
-- 실행: `start-openapi-prod.cmd` 또는 `start-openapi-test.cmd`
-- 종료: `stop-openapi-test.cmd`
+- 실행: `start-openapi-prod.cmd` (macOS/Linux는 `start-openapi-prod.sh`)
+- 종료: `stop-openapi-prod.cmd` (macOS/Linux는 `stop-openapi-prod.sh`)
 - 화면: `http://localhost:3020/openapi-test`
 - 백엔드: `http://localhost:8020`
 
