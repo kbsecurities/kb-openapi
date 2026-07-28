@@ -1397,6 +1397,7 @@ export default function OpenApiTestClient({
   const [tokenRequestDrafts, setTokenRequestDrafts] = useState<TokenRequestDraft[]>([]);
   const [isLoadingTokenDefaults, setIsLoadingTokenDefaults] = useState(false);
   const [tokenDefaultsError, setTokenDefaultsError] = useState("");
+  const [deviceHeader, setDeviceHeader] = useState({ ipAddr: "", macAddr: "" });
   const [accessToken, setAccessToken] = useState("");
   const [accessTokenExpiresAt, setAccessTokenExpiresAt] = useState("");
   const [tokenIssueStatus, setTokenIssueStatus] = useState<TokenIssueStatus>({ state: "idle" });
@@ -1858,7 +1859,14 @@ export default function OpenApiTestClient({
         setTokenRequestDrafts(nextDrafts.length > 0 ? nextDrafts : fallbackDrafts);
 
         const b2b = defaults.kb?.b2b;
-        const b2cToken = asRecord(asRecord(defaults.kb?.b2c?.tokenIssue).dataBody);
+        const b2cTokenIssue = asRecord(defaults.kb?.b2c?.tokenIssue);
+        const b2cToken = asRecord(b2cTokenIssue.dataBody);
+        const b2cDataHeader = asRecord(b2cTokenIssue.dataHeader);
+        const fetchedIpAddr = asString(b2cDataHeader.ipAddr);
+        const fetchedMacAddr = asString(b2cDataHeader.macAddr);
+        if (fetchedIpAddr || fetchedMacAddr) {
+          setDeviceHeader({ ipAddr: fetchedIpAddr, macAddr: fetchedMacAddr });
+        }
         const isB2BDefaultsMode = tokenProcedureModes.includes("B2B");
         const b2bAppKey = asString(b2b?.appKey);
         const b2bAppSecret = asString(b2b?.appSecret);
@@ -2371,7 +2379,17 @@ export default function OpenApiTestClient({
       const targetPath = sample.path;
       const targetHeadersText = prettyJson(JSON.stringify(sample.headers ?? {}, null, 2));
       const targetQueryText = prettyJson(JSON.stringify(sample.query ?? {}, null, 2));
-      const targetBodyText = prettyJson(JSON.stringify(normalizeDataEnvelope(sample.body ?? {}), null, 2));
+      const sampleBody = asRecord(sample.body ?? {});
+      const targetBodyText = prettyJson(
+        JSON.stringify(
+          {
+            ...sampleBody,
+            dataHeader: { ipAddr: deviceHeader.ipAddr, macAddr: deviceHeader.macAddr },
+          },
+          null,
+          2
+        )
+      );
 
       setEditorMethod(targetMethod);
       setEditorBaseUrl(targetBaseUrl);
@@ -2385,7 +2403,7 @@ export default function OpenApiTestClient({
       setSelectedSampleLabel(sample.label);
       setIsSampleEditorOpen(true);
     },
-    [defaultBaseUrl]
+    [defaultBaseUrl, deviceHeader]
   );
 
   const closeSampleEditor = useCallback(() => {

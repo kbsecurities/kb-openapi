@@ -131,7 +131,10 @@ export default function OpenApiTestPage() {
   const activeEnvironment = useMemo(() => environmentForConfig(runtimeConfig), [runtimeConfig]);
   const defaultBaseUrl = activeEnvironment.kbBaseUrl || FALLBACK_BASE_URL;
   const samples = useMemo(
-    () => ((kbCatalog as KbCatalog).b2c ?? []).map((entry) => toOpenApiSample(entry, defaultBaseUrl)),
+    () =>
+      ((kbCatalog as KbCatalog).b2c ?? [])
+        .filter((entry) => entry.businessCategory === "투자정보")
+        .map((entry) => toOpenApiSample(entry, defaultBaseUrl)),
     [defaultBaseUrl],
   );
   const tokenProcedures = useMemo(
