@@ -11,7 +11,7 @@ KB증권 OpenAPI(B2C, 운영 환경)를 Python으로 직접 호출하는 방법�
 
 ## 무엇을 다루나요
 
-- **인증(OAuth2)**: `auth_example.py` — `clientId`/`clientSecret`으로
+- **인증(OAuth2)**: `auth_example.py` — `appKey`/`appSecret`으로
   `access_token`을 발급받는 예제
 - **투자정보 조회**: `investment_info_example.py` — 발급받은 토큰으로
   '투자정보' 카테고리 TR **31종 전체**를 호출하는 함수를 제공합니다. 이 중
@@ -34,7 +34,7 @@ KB OpenAPI(B2C, 운영 전용)는 다음 규칙을 따릅니다.
 | 인증 방식 | OAuth2 Client Credentials (`POST /oauth2/token`) |
 | 요청 형식 | JSON, `POST` 본문은 `{"dataHeader": {...}, "dataBody": {...}}` 포맷으로 감쌈 |
 | 인증 헤더 | `Authorization: bearer <access_token>` (소문자 `bearer`) |
-| 앱 식별 헤더 | `appKey: <clientId>` |
+| 앱 식별 헤더 | `appKey: <appKey>` |
 | 전송 프로토콜 | HTTPS만 허용 (평문 HTTP 불가) |
 
 ### 1) 토큰 발급 (`POST {base_url}/oauth2/token`)
@@ -43,8 +43,8 @@ KB OpenAPI(B2C, 운영 전용)는 다음 규칙을 따릅니다.
 {
   "dataHeader": { "ipAddr": "", "macAddr": "" },
   "dataBody": {
-    "clientId": "발급받은 clientId",
-    "clientSecret": "발급받은 clientSecret",
+    "appKey": "발급받은 appKey",
+    "appSecret": "발급받은 appSecret",
     "grantType": "client_credentials"
   }
 }
@@ -57,7 +57,7 @@ KB OpenAPI(B2C, 운영 전용)는 다음 규칙을 따릅니다.
 ```
 Headers:
   Content-Type: application/json
-  appKey: 발급받은 clientId
+  appKey: 발급받은 appKey
   Authorization: bearer <위에서 발급받은 access_token>
 
 Body:
@@ -80,7 +80,7 @@ Body:
 1. **Python 3.9 이상** (본 저장소의 백엔드는 3.11+ 를 요구하지만, 이 예제 코드 자체는
    3.9 이상이면 동작합니다)
 2. KB증권 OpenAPI 포털(https://developer.kbsec.com) 에서 앱을 등록하고
-   `clientId` / `clientSecret`을 발급받으세요.
+   `appKey` / `appSecret`을 발급받으세요.
 3. 이 예제는 **운영(production) 서버**만을 대상으로 합니다. 별도의 테스트/샌드박스
    서버는 제공되지 않으므로, 실제 호출 시 정상적으로 발급된 자격증명이 필요합니다.
 
@@ -99,12 +99,12 @@ pip install -r requirements.txt
 cp .env.example .env
 ```
 
-`.env` 파일을 열어 발급받은 `clientId`/`clientSecret`을 채워 넣으세요.
+`.env` 파일을 열어 발급받은 `appKey`/`appSecret`을 채워 넣으세요.
 
 ```
 KB_OPENAPI_BASE_URL=https://developer.kbsec.com:32484
-KB_OPENAPI_CLIENT_ID=여기에_clientId
-KB_OPENAPI_CLIENT_SECRET=여기에_clientSecret
+KB_OPENAPI_APP_KEY=여기에_appKey
+KB_OPENAPI_APP_SECRET=여기에_appSecret
 ```
 
 `.env`는 저장소 최상위 `.gitignore`에 이미 포함되어 있어 커밋되지 않습니다.
@@ -239,7 +239,7 @@ access_token 발급 완료 (32자)
 
 - 이 예제는 **운영 서버를 직접 호출**합니다. 잘못된 조회조건으로 과도하게 반복
   호출하면 계정이 제한될 수 있으니 테스트 시 호출 빈도에 유의하세요.
-- `.env` 파일이나 `clientSecret`을 git에 커밋하거나 로그에 남기지 마세요.
+- `.env` 파일이나 `appSecret`을 git에 커밋하거나 로그에 남기지 마세요.
 - 응답 필드 구조(`dataBody` 안의 필드명 등)는 KB 측 전문 규격서 기준으로 작성했지만,
   실제 운영 응답과 다를 수 있습니다. 처음 연동할 때는 `print_json()`으로 원본 응답을
   꼭 직접 확인하세요.

@@ -18,8 +18,8 @@ def openapi_test_defaults(mode: str | None = None) -> dict[str, Any]:
                 "tokenBaseUrl": settings.active_environment.kb_b2c_token_base_url,
                 "tokenIssue": {
                     "dataBody": {
-                        "clientId": "",
-                        "clientSecret": "",
+                        "appKey": "",
+                        "appSecret": "",
                         "grantType": "client_credentials",
                     },
                 },

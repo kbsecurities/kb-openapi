@@ -36,8 +36,8 @@ class KBOpenApiConfig:
     """KB OpenAPI 호출에 필요한 접속 정보."""
 
     base_url: str
-    client_id: str
-    client_secret: str
+    app_key: str
+    app_secret: str
 
 
 def load_config() -> KBOpenApiConfig:
@@ -45,20 +45,20 @@ def load_config() -> KBOpenApiConfig:
 
     필요한 환경변수:
         KB_OPENAPI_BASE_URL      (선택, 기본값은 KB증권 운영 서버)
-        KB_OPENAPI_CLIENT_ID     (필수) KB OpenAPI 포털에서 발급받은 clientId
-        KB_OPENAPI_CLIENT_SECRET (필수) KB OpenAPI 포털에서 발급받은 clientSecret
+        KB_OPENAPI_APP_KEY     (필수) KB OpenAPI 포털에서 발급받은 appKey
+        KB_OPENAPI_APP_SECRET (필수) KB OpenAPI 포털에서 발급받은 appSecret
     """
     base_url = os.environ.get("KB_OPENAPI_BASE_URL", "https://developer.kbsec.com:32484").rstrip("/")
-    client_id = os.environ.get("KB_OPENAPI_CLIENT_ID", "")
-    client_secret = os.environ.get("KB_OPENAPI_CLIENT_SECRET", "")
+    app_key = os.environ.get("KB_OPENAPI_APP_KEY", "")
+    app_secret = os.environ.get("KB_OPENAPI_APP_SECRET", "")
 
-    if not client_id or not client_secret:
+    if not app_key or not app_secret:
         raise RuntimeError(
-            "KB_OPENAPI_CLIENT_ID / KB_OPENAPI_CLIENT_SECRET 환경변수가 설정되지 않았습니다. "
+            "KB_OPENAPI_APP_KEY / KB_OPENAPI_APP_SECRET 환경변수가 설정되지 않았습니다. "
             ".env.example을 복사해 .env를 만들고 값을 채우거나, 환경변수를 직접 export 하세요."
         )
 
-    return KBOpenApiConfig(base_url=base_url, client_id=client_id, client_secret=client_secret)
+    return KBOpenApiConfig(base_url=base_url, app_key=app_key, app_secret=app_secret)
 
 
 # KB OpenAPI(B2C)는 원래 모바일 앱 채널을 기준으로 설계되어 있어서, 서버에서
@@ -81,12 +81,12 @@ DEFAULT_TR_DATA_HEADER: dict[str, str] = {
 def build_tr_headers(config: KBOpenApiConfig, access_token: str) -> dict[str, str]:
     """일반 거래(TR) 조회 API 호출에 필요한 HTTP 헤더를 만듭니다.
 
-    appKey에는 clientId를, Authorization에는 발급받은 access_token을
+    appKey에는 appKey를, Authorization에는 발급받은 access_token을
     "bearer <access_token>" 형태(소문자 bearer)로 실어 보내야 합니다.
     """
     return {
         "Content-Type": "application/json",
-        "appKey": config.client_id,
+        "appKey": config.app_key,
         "Authorization": f"bearer {access_token}",
     }
 

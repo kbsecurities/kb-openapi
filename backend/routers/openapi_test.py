@@ -28,7 +28,7 @@ class OpenApiProxyRequest(BaseModel):
     headers: dict[str, str] = Field(default_factory=dict)
     body: Any = None
     accessToken: Optional[str] = None
-    clientSecret: Optional[str] = None
+    appSecret: Optional[str] = None
     encryptBody: bool = False
 
 
@@ -47,19 +47,19 @@ def _compact_body(body: Any) -> str:
     return json.dumps(body, ensure_ascii=False, separators=(",", ":"))
 
 
-def _encrypt_ecb_pkcs7(client_secret: str, plain_body: str) -> str:
-    key = client_secret.encode("utf-8")
+def _encrypt_ecb_pkcs7(app_secret: str, plain_body: str) -> str:
+    key = app_secret.encode("utf-8")
     if len(key) not in {16, 24, 32}:
-        raise HTTPException(status_code=400, detail="clientSecret must be 16, 24, or 32 bytes for AES encryption.")
+        raise HTTPException(status_code=400, detail="appSecret must be 16, 24, or 32 bytes for AES encryption.")
     cipher = AES.new(key, AES.MODE_ECB)
     encrypted = cipher.encrypt(pad(plain_body.encode("utf-8"), AES.block_size))
     return base64.b64encode(encrypted).decode("ascii")
 
 
-def _decrypt_ecb_pkcs7(client_secret: str, encrypted_body: str) -> str:
-    key = client_secret.encode("utf-8")
+def _decrypt_ecb_pkcs7(app_secret: str, encrypted_body: str) -> str:
+    key = app_secret.encode("utf-8")
     if len(key) not in {16, 24, 32}:
-        raise HTTPException(status_code=400, detail="clientSecret must be 16, 24, or 32 bytes for AES decryption.")
+        raise HTTPException(status_code=400, detail="appSecret must be 16, 24, or 32 bytes for AES decryption.")
     try:
         encrypted = base64.b64decode(encrypted_body)
         cipher = AES.new(key, AES.MODE_ECB)
@@ -74,8 +74,8 @@ def _make_hs_key(access_token: str, plain_body: str) -> str:
     return base64.b64encode(digest_hex.encode("utf-8")).decode("ascii")
 
 
-def _decrypt_response_if_needed(response_text: str, client_secret: Optional[str]) -> tuple[str, bool]:
-    if not client_secret:
+def _decrypt_response_if_needed(response_text: str, app_secret: Optional[str]) -> tuple[str, bool]:
+    if not app_secret:
         return response_text, False
     try:
         payload = json.loads(response_text)
@@ -86,7 +86,7 @@ def _decrypt_response_if_needed(response_text: str, client_secret: Optional[str]
     encrypted_body = payload.get("encrypt")
     if not isinstance(encrypted_body, str) or not encrypted_body.strip():
         return response_text, False
-    return _decrypt_ecb_pkcs7(client_secret, encrypted_body), True
+    return _decrypt_ecb_pkcs7(app_secret, encrypted_body), True
 
 
 @router.post("/proxy")
@@ -99,11 +99,11 @@ async def proxy_openapi_request(request: OpenApiProxyRequest) -> dict[str, Any]:
     if request.encryptBody and request.method in {"POST", "PUT", "PATCH"}:
         if not request.accessToken:
             raise HTTPException(status_code=400, detail="accessToken is required for encrypted OpenAPI requests.")
-        if not request.clientSecret:
-            raise HTTPException(status_code=400, detail="clientSecret is required for encrypted OpenAPI requests.")
+        if not request.appSecret:
+            raise HTTPException(status_code=400, detail="appSecret is required for encrypted OpenAPI requests.")
         plain_body = _compact_body(request.body)
         headers["hsKey"] = _make_hs_key(request.accessToken, plain_body)
-        request_body = {"encrypt": _encrypt_ecb_pkcs7(request.clientSecret, plain_body)}
+        request_body = {"encrypt": _encrypt_ecb_pkcs7(request.appSecret, plain_body)}
     sent_headers = dict(headers)
 
     try:
@@ -117,7 +117,7 @@ async def proxy_openapi_request(request: OpenApiProxyRequest) -> dict[str, Any]:
     except httpx.HTTPError as exc:
         raise HTTPException(status_code=502, detail=str(exc)) from exc
 
-    response_body, decrypted = _decrypt_response_if_needed(response.text, request.clientSecret)
+    response_body, decrypted = _decrypt_response_if_needed(response.text, request.appSecret)
     response_headers = dict(response.headers)
     if decrypted:
         response_headers["x-openapi-test-decrypted"] = "true"

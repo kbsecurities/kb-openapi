@@ -1,9 +1,9 @@
 """KB OpenAPI(B2C) OAuth2 access_token 발급 예제.
 
 사전 준비:
-    1) KB증권 OpenAPI 포털에서 앱을 등록하고 clientId / clientSecret을 발급받습니다.
+    1) KB증권 OpenAPI 포털에서 앱을 등록하고 appKey / appSecret을 발급받습니다.
     2) 이 폴더의 .env.example을 복사해 .env 파일을 만들고 값을 채웁니다.
-       (또는 KB_OPENAPI_CLIENT_ID / KB_OPENAPI_CLIENT_SECRET 환경변수를 직접 export)
+       (또는 KB_OPENAPI_APP_KEY / KB_OPENAPI_APP_SECRET 환경변수를 직접 export)
 
 API 사양:
     POST {base_url}/oauth2/token
@@ -25,7 +25,7 @@ from common import KBOpenApiConfig, load_config, post_json, print_json
 
 
 def issue_access_token(config: KBOpenApiConfig) -> dict:
-    """clientId/clientSecret으로 access_token을 발급받습니다.
+    """appKey/appSecret으로 access_token을 발급받습니다.
 
     Returns:
         KB OpenAPI 원본 응답(JSON)을 그대로 반환합니다. access_token은 보통
@@ -38,8 +38,8 @@ def issue_access_token(config: KBOpenApiConfig) -> dict:
         # 서버(백엔드)에서 호출하는 경우 비워서 보내도 발급에는 문제가 없습니다.
         "dataHeader": {"ipAddr": "", "macAddr": ""},
         "dataBody": {
-            "clientId": config.client_id,
-            "clientSecret": config.client_secret,
+            "appKey": config.app_key,
+            "appSecret": config.app_secret,
             "grantType": "client_credentials",
         },
     }

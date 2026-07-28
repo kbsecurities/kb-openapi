@@ -77,7 +77,7 @@ function toOpenApiSample(entry: CatalogSample, baseUrl: string): OpenApiSample {
     businessCategory: entry.businessCategory,
     headers: {
       "Content-Type": "application/json",
-      appKey: "{{clientId}}",
+      appKey: "{{appKey}}",
       Authorization: "bearer {{access_token}}",
       ...(entry.headers ?? {}),
     },

@@ -10,8 +10,8 @@ auth:
     required_headers:
       - "Content-Type"
     required_body:
-      - "clientId"
-      - "clientSecret"
+      - "appKey"
+      - "appSecret"
       - "grantType"
 features:
   quote:

@@ -176,8 +176,8 @@ type OpenApiTestDefaults = {
     b2b?: {
       activeMode?: string;
       baseUrl?: string;
-      clientId?: string;
-      clientSecret?: string;
+      appKey?: string;
+      appSecret?: string;
       scope?: string;
       account?: string;
       productCode?: string;
@@ -196,8 +196,8 @@ type OpenApiTestDefaults = {
     activeEnvironment?: string;
     restBaseUrl?: string;
     websocketUrl?: string;
-    clientId?: string;
-    clientSecret?: string;
+    appKey?: string;
+    appSecret?: string;
     tokenIssue?: OpenApiTokenRequestDefault;
     websocketApproval?: OpenApiTokenRequestDefault;
   };
@@ -1023,8 +1023,8 @@ function parseCredentialStorage(raw: string | null) {
     const parsed = JSON.parse(raw);
     if (!parsed || typeof parsed !== "object") return emptyCredentialStorage();
     return {
-      apiKey: typeof parsed.clientId === "string" ? parsed.clientId : typeof parsed.apiKey === "string" ? parsed.apiKey : "",
-      secretKey: typeof parsed.clientSecret === "string" ? parsed.clientSecret : typeof parsed.secretKey === "string" ? parsed.secretKey : "",
+      apiKey: typeof parsed.appKey === "string" ? parsed.appKey : typeof parsed.apiKey === "string" ? parsed.apiKey : "",
+      secretKey: typeof parsed.appSecret === "string" ? parsed.appSecret : typeof parsed.secretKey === "string" ? parsed.secretKey : "",
       ciNo: typeof parsed.ciNo === "string" ? parsed.ciNo : "",
       userInfo: typeof parsed.userInfo === "string" ? parsed.userInfo : "",
       userInfoKey: typeof parsed.userInfoKey === "string" ? parsed.userInfoKey : "1",
@@ -1111,15 +1111,15 @@ function withCredentialPlaceholders(value: unknown) {
   if (Object.keys(dataBody).length > 0 || "dataBody" in body) {
     body.dataBody = {
       ...dataBody,
-      clientId: "{{clientId}}",
-      clientSecret: "{{clientSecret}}",
+      appKey: "{{appKey}}",
+      appSecret: "{{appSecret}}",
     };
     return body;
   }
   return {
     ...body,
-    clientId: "{{clientId}}",
-    clientSecret: "{{clientSecret}}",
+    appKey: "{{appKey}}",
+    appSecret: "{{appSecret}}",
   };
 }
 
@@ -1146,8 +1146,8 @@ function buildKbTokenRequestDrafts(defaults: OpenApiTestDefaults, modes: OpenApi
             ? withCredentialPlaceholders(tokenBody)
             : {
                 dataBody: {
-                  clientId: "{{clientId}}",
-                  clientSecret: "{{clientSecret}}",
+                  appKey: "{{appKey}}",
+                  appSecret: "{{appSecret}}",
                   grantType: "client_credentials",
                 },
               }
@@ -1159,8 +1159,8 @@ function buildKbTokenRequestDrafts(defaults: OpenApiTestDefaults, modes: OpenApi
   if (modeSet.has("B2B")) {
     const device = asRecord(b2b.device);
     const baseUrl = b2b.baseUrl || KB_B2B_BASE_URL;
-    const clientId = "{{clientId}}";
-    const clientSecret = "{{clientSecret}}";
+    const appKey = "{{appKey}}";
+    const appSecret = "{{appSecret}}";
     const scope = asString(b2b.scope) || "public security";
     const ciNo = "{{ciNo}}";
     const userInfo = "{{userInfo}}";
@@ -1172,7 +1172,7 @@ function buildKbTokenRequestDrafts(defaults: OpenApiTestDefaults, modes: OpenApi
     const clauseAgreeBody = {
       dataHeader: tokenDataHeader(device, "body"),
       dataBody: {
-        clientId,
+        appKey,
         ciNo,
         collAgreeYn: "Y",
         offerAgreeYn: "Y",
@@ -1204,7 +1204,7 @@ function buildKbTokenRequestDrafts(defaults: OpenApiTestDefaults, modes: OpenApi
         bodyText: tokenDraftBodyText(emailAgreeRequest, {
           dataHeader: tokenDataHeader(device, "body"),
           dataBody: {
-            clientId,
+            appKey,
             ciNo,
             emailAgrmtF: "Y",
             agrType: "1",
@@ -1223,7 +1223,7 @@ function buildKbTokenRequestDrafts(defaults: OpenApiTestDefaults, modes: OpenApi
         bodyText: tokenDraftBodyText(authIssueRequest, {
           dataHeader: tokenDataHeader(device, "body"),
           dataBody: {
-            clientId,
+            appKey,
             ciNo,
             userInfo,
             infoType: userInfoKey || "1",
@@ -1243,8 +1243,8 @@ function buildKbTokenRequestDrafts(defaults: OpenApiTestDefaults, modes: OpenApi
           dataHeader: tokenDataHeader(device, "body"),
           dataBody: {
             code: "{{code}}",
-            clientId,
-            clientSecret,
+            appKey,
+            appSecret,
             grantType: "authorization_code",
             scope,
             issueNo: "{{issueNo}}",
@@ -1262,8 +1262,8 @@ function buildKbTokenRequestDrafts(defaults: OpenApiTestDefaults, modes: OpenApi
         bodyText: toPrettyBody({
           dataHeader: tokenDataHeader(device),
           dataBody: {
-            clientId,
-            clientSecret,
+            appKey,
+            appSecret,
             grantType: "client_credentials",
             scope,
           },
@@ -1282,8 +1282,8 @@ function buildKbTokenRequestDrafts(defaults: OpenApiTestDefaults, modes: OpenApi
           dataHeader: tokenDataHeader(device),
           dataBody: {
             refreshToken: "",
-            clientId,
-            clientSecret,
+            appKey,
+            appSecret,
             grantType: "refresh_token",
             scope,
           },
@@ -1302,8 +1302,8 @@ function buildKbTokenRequestDrafts(defaults: OpenApiTestDefaults, modes: OpenApi
           dataHeader: tokenDataHeader(device),
           dataBody: {
             token: "",
-            clientId,
-            clientSecret,
+            appKey,
+            appSecret,
           },
         }),
       }
@@ -1338,8 +1338,8 @@ function buildKisTokenRequestDrafts(defaultBaseUrl: string, defaults: OpenApiTes
       headersText: JSON_HEADERS_TEXT,
       bodyText: tokenDraftPlainBodyText(tokenIssueRequest, {
         grant_type: "client_credentials",
-        appkey: "{{clientId}}",
-        appsecret: "{{clientSecret}}",
+        appkey: "{{appKey}}",
+        appsecret: "{{appSecret}}",
       }),
     },
     {
@@ -1353,8 +1353,8 @@ function buildKisTokenRequestDrafts(defaultBaseUrl: string, defaults: OpenApiTes
       headersText: JSON_HEADERS_TEXT,
       bodyText: tokenDraftPlainBodyText(websocketApprovalRequest, {
         grant_type: "client_credentials",
-        appkey: "{{clientId}}",
-        secretkey: "{{clientSecret}}",
+        appkey: "{{appKey}}",
+        secretkey: "{{appSecret}}",
       }),
     },
   ];
@@ -1469,8 +1469,8 @@ export default function OpenApiTestClient({
       accessToken: accessToken.trim(),
       approval_key: approvalKey.trim(),
       approvalKey: approvalKey.trim(),
-      clientId: apiKey.trim(),
-      clientSecret: secretKey.trim(),
+      appKey: apiKey.trim(),
+      appSecret: secretKey.trim(),
       account: accountNo.trim(),
       accountNo: accountNo.trim(),
       gnlAcNo: accountNo.trim(),
@@ -1721,8 +1721,8 @@ export default function OpenApiTestClient({
       window.localStorage.setItem(
         credentialKey,
         JSON.stringify({
-          clientId: apiKey,
-          clientSecret: secretKey,
+          appKey: apiKey,
+          appSecret: secretKey,
           apiKey,
           secretKey,
           ciNo,
@@ -1797,22 +1797,22 @@ export default function OpenApiTestClient({
           setTokenRequestDrafts(buildKisTokenRequestDrafts(defaultBaseUrl, defaults));
 
           const kis = defaults.kis;
-          const kisClientId = asString(kis?.clientId);
-          const kisClientSecret = asString(kis?.clientSecret);
-          setApiKey((current) => current || kisClientId);
-          setSecretKey((current) => current || kisClientSecret);
-          if (typeof window !== "undefined" && (kisClientId || kisClientSecret)) {
+          const kisAppKey = asString(kis?.appKey);
+          const kisAppSecret = asString(kis?.appSecret);
+          setApiKey((current) => current || kisAppKey);
+          setSecretKey((current) => current || kisAppSecret);
+          if (typeof window !== "undefined" && (kisAppKey || kisAppSecret)) {
             const cached = parseCredentialStorage(window.localStorage.getItem(credentialKey));
-            const nextApiKey = cached.apiKey || kisClientId;
-            const nextSecretKey = cached.secretKey || kisClientSecret;
+            const nextApiKey = cached.apiKey || kisAppKey;
+            const nextSecretKey = cached.secretKey || kisAppSecret;
             window.localStorage.setItem(
               credentialKey,
               JSON.stringify({
                 ...cached,
                 apiKey: nextApiKey,
-                clientId: nextApiKey,
+                appKey: nextApiKey,
                 secretKey: nextSecretKey,
-                clientSecret: nextSecretKey,
+                appSecret: nextSecretKey,
                 updatedAt: new Date().toISOString(),
               })
             );
@@ -1860,18 +1860,18 @@ export default function OpenApiTestClient({
         const b2b = defaults.kb?.b2b;
         const b2cToken = asRecord(asRecord(defaults.kb?.b2c?.tokenIssue).dataBody);
         const isB2BDefaultsMode = tokenProcedureModes.includes("B2B");
-        const b2bClientId = asString(b2b?.clientId);
-        const b2bClientSecret = asString(b2b?.clientSecret);
+        const b2bAppKey = asString(b2b?.appKey);
+        const b2bAppSecret = asString(b2b?.appSecret);
         const b2bCiNo = asString(b2b?.ciNo);
         const b2bUserInfo = asString(b2b?.userInfo);
         const b2bAccount = asString(b2b?.account);
         const b2bProductCode = asString(b2b?.productCode);
-        const b2cClientId = asString(b2cToken.clientId);
-        const b2cClientSecret = asString(b2cToken.clientSecret);
+        const b2cAppKey = asString(b2cToken.appKey);
+        const b2cAppSecret = asString(b2cToken.appSecret);
 
         if (isB2BDefaultsMode) {
-          setApiKey((current) => current || b2bClientId);
-          setSecretKey((current) => current || b2bClientSecret);
+          setApiKey((current) => current || b2bAppKey);
+          setSecretKey((current) => current || b2bAppSecret);
           setCiNo((current) => current || b2bCiNo);
           setUserInfo((current) => current || b2bUserInfo);
           setAccountNo((current) => current || b2bAccount);
@@ -1879,8 +1879,8 @@ export default function OpenApiTestClient({
           return;
         }
 
-        setApiKey((current) => (current === b2bClientId ? b2cClientId : current || b2cClientId));
-        setSecretKey((current) => (current === b2bClientSecret ? b2cClientSecret : current || b2cClientSecret));
+        setApiKey((current) => (current === b2bAppKey ? b2cAppKey : current || b2cAppKey));
+        setSecretKey((current) => (current === b2bAppSecret ? b2cAppSecret : current || b2cAppSecret));
         setCiNo((current) => (current === b2bCiNo ? "" : current));
         setUserInfo((current) => (current === b2bUserInfo ? "" : current));
         setAccountNo((current) => (current === b2bAccount ? "" : current));
@@ -1936,8 +1936,8 @@ export default function OpenApiTestClient({
         accessToken: accessToken.trim(),
         approval_key: approvalKey.trim(),
         approvalKey: approvalKey.trim(),
-        clientId: apiKey.trim(),
-        clientSecret: secretKey.trim(),
+        appKey: apiKey.trim(),
+        appSecret: secretKey.trim(),
         ciNo: ciNo.trim(),
         userInfo: userInfo.trim(),
         userInfoKey: userInfoKey.trim(),
@@ -2017,7 +2017,7 @@ export default function OpenApiTestClient({
               headers: requestHeaders,
               body: needsBody ? parsedBody : undefined,
               accessToken: accessToken.trim(),
-              clientSecret: secretKey.trim(),
+              appSecret: secretKey.trim(),
               encryptBody: shouldEncryptRequest(requestUrl),
             }),
           });
@@ -2480,7 +2480,7 @@ export default function OpenApiTestClient({
         setApprovalKey("");
       }
       if (!apiKey.trim() || !secretKey.trim()) {
-        failManagedRealtime(sampleId, "KIS 실시간 접속키 발급에는 clientId와 secretKey가 필요합니다. 정보설정을 확인하세요.");
+        failManagedRealtime(sampleId, "KIS 실시간 접속키 발급에는 appKey와 secretKey가 필요합니다. 정보설정을 확인하세요.");
         return "";
       }
 
@@ -2541,7 +2541,7 @@ export default function OpenApiTestClient({
       });
       const nextApprovalKey = requestResult?.body ? extractApprovalKey(requestResult.body) : "";
       if (!requestResult?.ok || !nextApprovalKey) {
-        failManagedRealtime(sampleId, "KIS 실시간 웹소켓 접속키 발급에 실패했습니다. 토큰발급 응답과 clientId/secretKey를 확인하세요.");
+        failManagedRealtime(sampleId, "KIS 실시간 웹소켓 접속키 발급에 실패했습니다. 토큰발급 응답과 appKey/secretKey를 확인하세요.");
         return "";
       }
       setApprovalKey(nextApprovalKey);
@@ -3402,7 +3402,7 @@ export default function OpenApiTestClient({
             <h2 className="text-sm font-black text-slate-700">정보설정</h2>
             <div className="mt-3 grid gap-4 md:grid-cols-2">
               <label className="inline-flex w-full flex-col gap-1 text-sm font-semibold text-slate-700">
-                clientId
+                appKey
                 <input
                   value={apiKey}
                   onChange={(event) => {
@@ -3411,11 +3411,11 @@ export default function OpenApiTestClient({
                   }}
                   autoComplete="off"
                   className="rounded-md border border-slate-200 bg-white px-3 py-2 font-mono text-sm outline-none focus:border-[#fcb514]"
-                  placeholder="clientId 입력"
+                  placeholder="appKey 입력"
                 />
               </label>
               <label className="inline-flex w-full flex-col gap-1 text-sm font-semibold text-slate-700">
-                clientSecret
+                appSecret
                 <input
                   type="password"
                   value={secretKey}
@@ -3425,7 +3425,7 @@ export default function OpenApiTestClient({
                   }}
                   autoComplete="off"
                   className="rounded-md border border-slate-200 bg-white px-3 py-2 font-mono text-sm outline-none focus:border-[#fcb514]"
-                  placeholder="clientSecret 입력"
+                  placeholder="appSecret 입력"
                 />
               </label>
             </div>
