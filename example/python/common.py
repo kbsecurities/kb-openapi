@@ -61,28 +61,19 @@ def load_config() -> KBOpenApiConfig:
     return KBOpenApiConfig(base_url=base_url, app_key=app_key, app_secret=app_secret)
 
 
-# KB OpenAPI(B2C)는 원래 모바일 앱 채널을 기준으로 설계되어 있어서, 서버에서
-# 호출하더라도 dataHeader에 단말기/채널 식별 정보를 함께 실어 보내야 요청이 정상
-# 처리됩니다. 아래 값은 KB증권 OpenAPI 포털이 제공하는 샘플 전문에서 쓰는
-# placeholder 값이며, 실제 서비스에서는 자신의 앱 정보에 맞게 바꿔도 됩니다.
+# KB OpenAPI(B2C) TR 요청의 dataHeader는 ipAddr/macAddr 2개 필드만 사용합니다.
+# 서버(백엔드)에서 호출하는 경우 비워서 보내도 요청 처리에는 문제가 없습니다.
 DEFAULT_TR_DATA_HEADER: dict[str, str] = {
-    "udId": "UDID",  # 단말기 고유 식별자 (Unique Device ID)
-    "subChannel": "subChannel",  # 세부 채널 구분값
-    "deviceModel": "Android",  # 단말기 모델명
-    "deviceOs": "Android",  # 단말기 OS
-    "carrier": "KT",  # 통신사
-    "connectionType": "..",  # 접속 회선 종류
-    "appName": "..",  # 호출 앱 이름
-    "appVersion": "..",  # 호출 앱 버전
-    "scrNo": "0000",  # 호출 화면 번호
+    "ipAddr": "",
+    "macAddr": "",
 }
 
 
 def build_tr_headers(config: KBOpenApiConfig, access_token: str) -> dict[str, str]:
     """일반 거래(TR) 조회 API 호출에 필요한 HTTP 헤더를 만듭니다.
 
-    appKey에는 appKey를, Authorization에는 발급받은 access_token을
-    "bearer <access_token>" 형태(소문자 bearer)로 실어 보내야 합니다.
+    appKey 헤더에는 발급받은 appKey 값을, Authorization 헤더에는 발급받은
+    access_token을 "bearer <access_token>" 형태(소문자 bearer)로 실어 보내야 합니다.
     """
     return {
         "Content-Type": "application/json",

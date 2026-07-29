@@ -4,8 +4,8 @@ KB증권 OpenAPI의 '투자정보' 카테고리에 속한 조회성 TR **31종 �
 함수를 제공합니다. 이 카테고리의 모든 TR은 동일한 규칙을 따릅니다.
 
     POST {base_url}{endpoint}
-    Headers: Content-Type, appKey(=appKey), Authorization(=bearer <access_token>)
-    Body:    { "dataHeader": {...기기정보...}, "dataBody": {...조회조건...} }
+    Headers: Content-Type, appKey, Authorization(=bearer <access_token>)
+    Body:    { "dataHeader": {ipAddr, macAddr}, "dataBody": {...조회조건...} }
 
 파일 하단의 `if __name__ == "__main__":` 블록은 이 중 대표적인 5종(종목기본정보,
 주식현재가, 주식호가, 통합차트, 환율종합)만 실제로 실행해서 응답을 출력합니다.

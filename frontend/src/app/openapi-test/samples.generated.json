@@ -20,15 +20,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "stnd_is_cd": "005930"
@@ -456,15 +449,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {}
       },
@@ -1213,15 +1199,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "excg_clsf": "1",
@@ -2682,15 +2661,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "is_cd": "005930",
@@ -4535,15 +4507,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "excg_clsf": "1",
@@ -4794,15 +4759,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "is_cd": "005930"
@@ -5182,15 +5140,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "info_ccd": "1",
@@ -5697,15 +5648,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "excg_clsf": "1",
@@ -6139,15 +6083,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "excg_clsf": "1",
@@ -6372,15 +6309,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "excg_clsf": "1",
@@ -6716,15 +6646,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "excg_clsf": "1",
@@ -7144,15 +7067,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "thm_cd": ""
@@ -7400,15 +7316,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "inq_cnt": "10"
@@ -7668,15 +7577,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "excg_clsf": "1",
@@ -7937,15 +7839,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "excg_clsf": "1",
@@ -8306,15 +8201,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "excg_clsf": "1",
@@ -8638,15 +8526,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "excg_clsf": "1",
@@ -8945,15 +8826,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "mkt_clsf": "1",
@@ -9263,15 +9137,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "mkt_clsf": "1",
@@ -9654,15 +9521,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "excg_clsf": "1",
@@ -9964,15 +9824,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {}
       },
@@ -10853,15 +10706,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "lnd_clsf": "1"
@@ -11109,15 +10955,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "mkt_clsf": "1"
@@ -11365,15 +11204,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {}
       },
@@ -11630,15 +11462,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {}
       },
@@ -12243,15 +12068,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {}
       },
@@ -12628,15 +12446,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "is_no": ""
@@ -12860,15 +12671,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "inq_clsf": "1",
@@ -13266,15 +13070,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "inq_clsf": "1",
@@ -13563,15 +13360,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "inq_clsf": "1",
@@ -14187,15 +13977,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "inq_clsf": "1",
@@ -14436,15 +14219,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "inq_clsf": "1",
@@ -15319,15 +15095,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "excg_mktpr_ccd": "1"
@@ -16091,15 +15860,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "is_cd": "005930",
@@ -16723,15 +16485,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "inq_clsf": "1",
@@ -17585,15 +17340,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "inq_clsf": "1",
@@ -18303,15 +18051,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {}
       },
@@ -19540,15 +19281,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "inq_dt": "20250617",
@@ -20554,15 +20288,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "ccd": "1"
@@ -21854,15 +21581,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "rprst_cs_no": "",
@@ -22195,15 +21915,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "trd_dt": "20250617",
@@ -22698,15 +22411,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "is_no": "",
@@ -23081,15 +22787,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "is_cd": "005930",
@@ -23665,15 +23364,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "inq_strt_dt": "20250101",
@@ -24068,15 +23760,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "jb_ccd": "1",
@@ -24484,15 +24169,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "is_no": "",
@@ -24717,15 +24395,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "mkt_tm_clsf": "1",
@@ -25229,15 +24900,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "mkt_tm_clsf": "1",
@@ -25741,15 +25405,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "mkt_tm_clsf": "1",
@@ -26253,15 +25910,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "mkt_tm_clsf": "1",
@@ -26765,15 +26415,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "is_cd": "005930",
@@ -26938,15 +26581,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "is_cd": "005930",
@@ -27497,15 +27133,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "is_cd": "005930",
@@ -28056,15 +27685,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "is_cd": "005930",
@@ -28691,15 +28313,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "ordr_dt": "20250617",
@@ -29229,15 +28844,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "ccd": "1",
@@ -30060,15 +29668,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "is_cd": "005930",
@@ -30610,15 +30211,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "hndl_clsf": "1",
@@ -31076,15 +30670,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "inq_clsf": "1",
@@ -31910,15 +31497,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "inq_strt_dt": "20250101",
@@ -32772,15 +32352,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "ordr_clsf": "1",
@@ -33285,15 +32858,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "hndl_clsf": "1",
@@ -33584,15 +33150,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {}
       },
@@ -35109,15 +34668,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "krx_cd": "NAS",
@@ -36110,15 +35662,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "krx_cd": "NAS",
@@ -37999,15 +37544,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "krx_cd": "NAS",
@@ -38485,15 +38023,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "krx_cd": "NAS",
@@ -39180,15 +38711,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "crncy_cd": "",
@@ -39500,15 +39024,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {}
       },
@@ -39729,15 +39246,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {}
       },
@@ -39922,15 +39432,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "strt_ordr_dt": "20250617",
@@ -40575,15 +40078,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "ordr_dt": "20250617",
@@ -41230,15 +40726,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "strt_ordr_dt": "20250617",
@@ -41711,15 +41200,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "is_cd": "005930",
@@ -42127,15 +41609,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "exch_r_aplc_f": ""
@@ -42443,15 +41918,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "std_crncy_f": "",
@@ -43358,15 +42826,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {}
       },
@@ -43743,15 +43204,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "std_crncy_f": "",
@@ -44234,15 +43688,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "strt_dt": "20250101",
@@ -44805,15 +44252,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "crncy_cd": "",
@@ -45078,15 +44518,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "frgn_krx_ccd": "1",
@@ -45424,15 +44857,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "frgn_krx_ccd": "1",
@@ -45705,15 +45131,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "is_cd": "005930",
@@ -46004,15 +45423,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "frgn_krx_ccd": "1",
@@ -46284,15 +45696,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "frgn_krx_ccd": "1",
@@ -46436,15 +45841,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "is_cd": "005930",
@@ -46653,15 +46051,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "is_cd": "005930",
@@ -46830,15 +46221,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "strt_ordr_dt": "20250617",
@@ -47564,15 +46948,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "strt_ordr_dt": "20250617",
@@ -48251,15 +47628,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "ccls_clsf": "1",
@@ -48789,15 +48159,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "dprt_clsf": "1",
@@ -49597,15 +48960,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "trd_clsf": "1",
@@ -50098,15 +49454,8 @@
       },
       "body": {
         "dataHeader": {
-          "udId": "UDID",
-          "subChannel": "subChannel",
-          "deviceModel": "Android",
-          "deviceOs": "Android",
-          "carrier": "KT",
-          "connectionType": "..",
-          "appName": "..",
-          "appVersion": "..",
-          "scrNo": "0000"
+          "ipAddr": "",
+          "macAddr": ""
         },
         "dataBody": {
           "ordr_jb_clsf": "1",

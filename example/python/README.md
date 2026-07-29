@@ -62,14 +62,14 @@ Headers:
 
 Body:
 {
-  "dataHeader": { "udId": "...", "deviceModel": "...", ... },  // 아래 참고
+  "dataHeader": { "ipAddr": "", "macAddr": "" },
   "dataBody": { TR별 조회조건 }
 }
 ```
 
-`dataHeader`는 원래 모바일 앱 채널을 위한 단말기 식별 정보이지만, 서버에서
-호출할 때도 동일한 키를 (값은 placeholder로) 채워서 보내야 요청이 정상
-처리됩니다. `common.py`의 `DEFAULT_TR_DATA_HEADER`에 고정값으로 정의해두었습니다.
+`dataHeader`는 토큰 발급 요청과 동일하게 `ipAddr`/`macAddr` 2개 필드만 사용합니다.
+서버(백엔드)에서 호출하는 경우 비워서 보내도 요청 처리에는 문제가 없습니다.
+`common.py`의 `DEFAULT_TR_DATA_HEADER`에 고정값으로 정의해두었습니다.
 
 > **암호화(AES) 관련 참고**: 이 저장소의 백엔드 프록시(`backend/routers/openapi_test.py`)에는
 > `dataBody`를 AES-ECB로 암호화하는 로직이 있지만, 이는 `/baas/v2/*` 경로의 B2B API에서만
