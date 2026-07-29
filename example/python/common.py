@@ -114,31 +114,6 @@ def post_json(url: str, headers: dict[str, str], body: dict[str, Any]) -> dict[s
         raise RuntimeError(f"JSON이 아닌 응답을 받았습니다: {response.text[:200]!r}") from exc
 
 
-# '순위/상위' 계열 투자정보 TR(거래량상위, 등락률상위, 신고/신저 등)이 공통으로
-# 쓰는 종목 필터 조건입니다. *_ccd 필드를 "1"로 주면 뒤따르는 *_strt~*_end 범위가
-# 적용되고, "0"이면 해당 조건은 적용하지 않습니다(NONE). 예제에서는 기본값을
-# 전부 "0"(필터 없음)으로 두어, 최소 인자로 호출해도 전체 종목을 대상으로
-# 정상 동작하도록 했습니다. 특정 범위로 좁혀서 조회하고 싶다면 각 TR 함수 호출 시
-# data_body를 직접 덮어써서 사용하세요.
-RANKING_RANGE_FILTER_DEFAULTS: dict[str, str] = {
-    "trgt_xcl": "",  # 대상제외 코드 (관리종목/거래정지/정리매매 등 제외 항목 비트조합)
-    "cptl_amt_inpt_ccd": "0",  # 자본금 범위 필터 사용여부
-    "cptl_amt_inpt_strt": "",
-    "cptl_amt_inpt_end": "",
-    "prc_stn_inpt_ccd": "0",  # 가격대 범위 필터 사용여부
-    "prc_stn_inpt_strt": "",
-    "prc_stn_inpt_end": "",
-    "opn_prc_tl_amt_inpt_ccd": "0",  # 시가총액 범위 필터 사용여부
-    "opn_prc_tl_amt_inpt_strt": "",
-    "opn_prc_tl_amt_inpt_end": "",
-    "vlm_inpt_ccd": "0",  # 거래량 범위 필터 사용여부
-    "vlm_inpt_strt": "",
-    "vlm_inpt_end": "",
-    "pr_vl_prc_inpt_ccd": "0",  # 액면가 범위 필터 사용여부
-    "pr_vl_prc_inpt_strt": "",
-    "pr_vl_prc_inpt_end": "",
-}
-
 
 def print_json(title: str, payload: Any) -> None:
     """예제 실행 결과를 사람이 읽기 좋은 형태로 출력합니다."""

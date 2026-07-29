@@ -23,7 +23,6 @@ from typing import Any
 
 from auth_example import get_access_token
 from common import (
-    RANKING_RANGE_FILTER_DEFAULTS,
     KBOpenApiConfig,
     build_tr_body,
     build_tr_headers,
@@ -292,37 +291,23 @@ def get_foreign_institution_top(
 def get_program_trading_top(
     config: KBOpenApiConfig,
     access_token: str,
-    index_id: str = "",
     count: str = "10",
-    ascending: bool = False,
 ) -> dict:
     """IVS10920 - 프로그램매매상위 조회.
 
-    자본금/가격대/시가총액/거래량/액면가 범위 필터는
-    common.RANKING_RANGE_FILTER_DEFAULTS 기본값(필터 없음)을 사용합니다.
-
     Args:
-        index_id: 지수ID. 비우면 전체 대상
         count: 조회건수 (기본값 "10")
-        ascending: True면 하위순, False(기본값)면 상위순
     """
     return call_tr(
         config,
         access_token,
         "/api/v1/ivs10920",
-        {
-            "indx_id": index_id,
-            **RANKING_RANGE_FILTER_DEFAULTS,
-            "inq_cnt": count,
-            "srt_clsf": "2" if ascending else "1",
-        },
+        {"inq_cnt": count},
     )
 
 
 # ---------------------------------------------------------------------------
 # 3) 랭킹 / 상위 조회
-# 아래 함수들은 모두 자본금/가격대/시가총액/거래량/액면가 범위 필터를 공유하며,
-# common.RANKING_RANGE_FILTER_DEFAULTS(필터 없음)를 기본값으로 사용합니다.
 # ---------------------------------------------------------------------------
 
 
@@ -331,28 +316,18 @@ def get_volume_top(
     access_token: str,
     market: str = "1",
     segment: str = "1",
-    count: str = "10",
-    by_turnover: bool = False,
 ) -> dict:
     """IVU10280 - 거래량상위 조회.
 
     Args:
         market: 거래소구분. "0"=통합, "1"=KRX, "2"=NXT
         segment: 시장구분. "1"=전체, "2"=KOSPI, "3"=KOSDAQ
-        count: 조회건수 (기본값 "10")
-        by_turnover: True면 거래회전율 기준 정렬, False(기본값)면 거래량 기준
     """
     return call_tr(
         config,
         access_token,
         "/api/v1/ivu10280",
-        {
-            "excg_clsf": market,
-            "mkt_clsf": segment,
-            **RANKING_RANGE_FILTER_DEFAULTS,
-            "inq_cnt": count,
-            "srt_clsf": "2" if by_turnover else "1",
-        },
+        {"excg_clsf": market, "mkt_clsf": segment},
     )
 
 
@@ -379,12 +354,10 @@ def get_surge_plunge_top(
         {
             "excg_clsf": market,
             "mkt_clsf": segment,
-            **RANKING_RANGE_FILTER_DEFAULTS,
             "inq_cnt": count,
             "up_dwn_ccd": "1" if surge else "2",
             "minute_dy_ccd": "1",  # 1:분전, 2:일전
             "minute_dy_unt": "",  # 몇 분/일 전인지 (비우면 KB 기본값 적용)
-            "crdt_cndt": "1",  # 신용조건: 1=전체조회
         },
     )
 
@@ -413,9 +386,7 @@ def get_trading_value_top(
             "excg_clsf": market,
             "mkt_clsf": segment,
             "thdy_bdy_clsf": "1" if today else "2",
-            **RANKING_RANGE_FILTER_DEFAULTS,
             "inq_cnt": count,
-            "crdt_grp_clsf": "1",  # 신용그룹구분: 1=전체조회
             "srt_clsf": "1",  # 정렬구분: 1=상위
         },
     )
@@ -444,10 +415,8 @@ def get_change_rate_top(
         {
             "excg_clsf": market,
             "mkt_clsf": segment,
-            **RANKING_RANGE_FILTER_DEFAULTS,
             "inq_cnt": count,
             "srt_clsf": "1" if rising else "2",
-            "crdt_clsf": "1",  # 신용구분: 1=전체조회
         },
     )
 
@@ -472,10 +441,8 @@ def get_open_price_change_rate_top(
         "/api/v1/ivs10910",
         {
             "mkt_clsf": segment,
-            **RANKING_RANGE_FILTER_DEFAULTS,
             "inq_cnt": count,
             "srt_clsf": "1" if rising else "2",
-            "crdt_cndt": "1",  # 신용조건: 1=전체조회
         },
     )
 
@@ -504,9 +471,6 @@ def get_extended_change_rate_rank(
             "mkt_clsf": segment,
             "srt_clsf": "1" if rising else "2",
             "thdy_bdy_clsf": "1" if today else "2",
-            "trgt_xcl_cd": "1",  # 대상제외코드: 1=전체
-            "vlm_clsf": "1",  # 거래량구분: 1=전체
-            **RANKING_RANGE_FILTER_DEFAULTS,
             "inq_cnt": count,
         },
     )
@@ -537,13 +501,11 @@ def get_new_high_low(
         {
             "excg_clsf": market,
             "mkt_clsf": segment,
-            **RANKING_RANGE_FILTER_DEFAULTS,
             "inq_cnt": count,
             "nw_stk_lw_ccd": "1" if is_new_high else "2",
             "std_clsf": "1",  # 기준구분: 1=고저기준
             "prd_clsf": period,
             "excd_clsf": "1",  # 돌파구분: 1=일시돌파
-            "crdt_clsf": "1",  # 신용구분: 1=전체조회
         },
     )
 
@@ -651,33 +613,19 @@ def get_holiday_info(
     )
 
 
-def get_stock_master_info(
-    config: KBOpenApiConfig, access_token: str, stock_code: str, **extra_fields: str
-) -> dict:
+def get_stock_master_info(config: KBOpenApiConfig, access_token: str, **extra_fields: str) -> dict:
     """SIAM4983 - 종목관리(종목 마스터) 조회.
 
-    이 TR은 상장일자/매매제한/입출제한 등 90여 개의 세부 필드를 조회조건으로 받을
-    수 있는 대형 조회 TR입니다. 여기서는 가장 자주 쓰는 종목코드만 파라미터로 받고,
-    나머지 조건은 필요할 때 키워드 인자로 덧붙일 수 있게 했습니다.
+    KB 명세(inputFilter) 기준으로 이 TR의 입력 필드는 전부 제외 대상이라,
+    조회조건 없이(dataBody={}) 호출하면 전체 종목 마스터 정보를 반환합니다.
+    상장일자/매매제한/입출제한 등 90여 개의 출력 필드는
+    samples.generated.json의 "Tkb_SIAM4983_B2C" 항목을 참고하세요.
 
     Args:
-        stock_code: 표준/단축/심볼/자체 종목코드에 공통으로 사용할 종목코드 (예: "005930")
-        **extra_fields: 그 외 조회조건(dl_mkt_ccd, isng_ntn_cd 등)을 필요할 때만 추가.
-            전체 필드 목록은 samples.generated.json의 "Tkb_SIAM4983_B2C" 항목을 참고하세요.
+        **extra_fields: 참고용 확장 포인트입니다. KB 명세상 기본적으로는 필요하지
+            않습니다.
     """
-    return call_tr(
-        config,
-        access_token,
-        "/api/v1/siam4983",
-        {
-            "hndl_clsf": "4",  # 처리구분: 4=조회
-            "stnd_is_cd": stock_code,
-            "shrt_is_cd": stock_code,
-            "symbl_is_cd": stock_code,
-            "slf_is_cd": stock_code,
-            **extra_fields,
-        },
-    )
+    return call_tr(config, access_token, "/api/v1/siam4983", {**extra_fields})
 
 
 # ---------------------------------------------------------------------------
