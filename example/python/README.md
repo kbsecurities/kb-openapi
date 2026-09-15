@@ -14,10 +14,10 @@ KB증권 OpenAPI(B2C, 운영 환경)를 Python으로 직접 호출하는 방법�
 - **인증(OAuth2)**: `auth_example.py` — `appKey`/`appSecret`으로
   `access_token`을 발급받는 예제
 - **투자정보 조회**: `investment_info_example.py` — 발급받은 토큰으로
-  '투자정보' 카테고리 TR **31종 전체**를 호출하는 함수를 제공합니다. 이 중
+  '투자정보' 카테고리 TR **29종 전체**를 호출하는 함수를 제공합니다. 이 중
   대표적인 5종(종목기본정보, 주식현재가, 주식호가, 통합차트, 환율종합)은
   `python investment_info_example.py`로 바로 실행해서 응답을 확인할 수 있고,
-  나머지 26종은 함수만 정의되어 있으니 필요할 때 그대로 import해서 쓰면 됩니다.
+  나머지 24종은 함수만 정의되어 있으니 필요할 때 그대로 import해서 쓰면 됩니다.
 
 계좌개설, 고객계좌(잔고/보유종목 등), 트레이딩(주문/체결 등) API는 이번
 예제에 포함되어 있지 않습니다. 다만 요청 방식(헤더, `dataHeader`/`dataBody`
@@ -128,7 +128,7 @@ python investment_info_example.py
 서비스에서는 토큰 만료 시각(`expires_in`)까지 캐싱해서 재사용하는 것을
 권장합니다 (이 예제는 참고용이라 단순화했습니다).
 
-나머지 26개 함수는 REPL이나 다른 스크립트에서 바로 가져다 쓸 수 있습니다.
+나머지 24개 함수는 REPL이나 다른 스크립트에서 바로 가져다 쓸 수 있습니다.
 
 ```python
 from auth_example import get_access_token
@@ -161,11 +161,11 @@ access_token 발급 완료 (32자)
 | --- | --- |
 | `common.py` | 설정 로딩, 공통 헤더/바디 조립, 랭킹류 TR 공통 필터, HTTP 요청 등 공용 유틸리티 |
 | `auth_example.py` | OAuth2 토큰 발급 예제 (`issue_access_token`, `get_access_token`) |
-| `investment_info_example.py` | 투자정보 TR 31종 전체 호출 함수 (main은 대표 5종만 실행) |
+| `investment_info_example.py` | 투자정보 TR 29종 전체 호출 함수 (main은 대표 5종만 실행) |
 | `requirements.txt` | 의존 패키지 목록 (`requests`, `python-dotenv`) |
 | `.env.example` | 환경변수 템플릿 |
 
-## 투자정보 카테고리 전체 TR 목록 (31종)
+## 투자정보 카테고리 전체 TR 목록 (29종)
 
 아래 TR은 모두 `investment_info_example.py`에 호출 함수가 구현되어 있습니다.
 "실행 대상" 표시가 있는 5종만 `python investment_info_example.py` 실행 시
@@ -184,7 +184,6 @@ access_token 발급 완료 (32자)
 | IVU10420 | `get_foreign_broker_trend` | 당일주요외국계거래원 | |
 | IVU10450 | `get_program_trading_trend` | 종목별프로그램매매추이 | |
 | IVU10020 | `get_foreign_institution_top` | 외국인기관매매상위 | |
-| IVS11430 | `get_theme_group` | 테마그룹조회 | |
 | IVS10920 | `get_program_trading_top` | 프로그램매매상위 | |
 | IVU10280 | `get_volume_top` | 거래량상위 | |
 | IVU10270 | `get_surge_plunge_top` | 급등/급락 상위 | |
@@ -198,7 +197,6 @@ access_token 발급 완료 (32자)
 | IVM30010 | `get_sector_ranking` | 업종랭킹 | |
 | IVA60190 | `get_exchange_rate_summary` | 환율종합 | ✅ |
 | IVA10370 | `get_market_fund_flow` | 증시주변자금동향 | |
-| SPAM2508 | `get_holiday_info` | 공휴일관리 | |
 | SIAM4983 | `get_stock_master_info` | 종목관리 (종목 마스터, 필드 90여개) | |
 | GSS10030 | `get_global_stock_price` | (해외주식) 현재가 | |
 | GSS10040 | `get_global_stock_orderbook` | (해외주식) 호가 | |

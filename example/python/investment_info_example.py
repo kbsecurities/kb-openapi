@@ -1,6 +1,6 @@
 """KB OpenAPI(B2C) 투자정보 API 호출 예제.
 
-KB증권 OpenAPI의 '투자정보' 카테고리에 속한 조회성 TR **31종 전체**의 호출
+KB증권 OpenAPI의 '투자정보' 카테고리에 속한 조회성 TR **29종 전체**의 호출
 함수를 제공합니다. 이 카테고리의 모든 TR은 동일한 규칙을 따릅니다.
 
     POST {base_url}{endpoint}
@@ -9,7 +9,7 @@ KB증권 OpenAPI의 '투자정보' 카테고리에 속한 조회성 TR **31종 �
 
 파일 하단의 `if __name__ == "__main__":` 블록은 이 중 대표적인 5종(종목기본정보,
 주식현재가, 주식호가, 통합차트, 환율종합)만 실제로 실행해서 응답을 출력합니다.
-나머지 26종은 함수만 정의되어 있으니, 필요한 함수를 import해서 그대로 가져다
+나머지 24종은 함수만 정의되어 있으니, 필요한 함수를 import해서 그대로 가져다
 쓰거나 참고해서 새 TR을 추가하면 됩니다. 사용 가능한 투자정보 TR 전체 목록은
 README.md의 표를 참고하세요.
 
@@ -511,17 +511,8 @@ def get_new_high_low(
 
 
 # ---------------------------------------------------------------------------
-# 4) 시장 전체 / 테마 / 세계지수
+# 4) 시장 전체 / 세계지수
 # ---------------------------------------------------------------------------
-
-
-def get_theme_group(config: KBOpenApiConfig, access_token: str, theme_code: str = "") -> dict:
-    """IVS11430 - 테마그룹조회.
-
-    Args:
-        theme_code: 테마코드. 비우면 전체 테마 목록을 반환합니다.
-    """
-    return call_tr(config, access_token, "/api/v1/ivs11430", {"thm_cd": theme_code})
 
 
 def get_market_summary(config: KBOpenApiConfig, access_token: str) -> dict:
@@ -536,14 +527,9 @@ def get_world_index(config: KBOpenApiConfig, access_token: str, continent: str =
     """IVA60140 - 세계지수 조회.
 
     Args:
-        continent: 대륙구분. "1"=주요지수, "C"=아메리카, "E"=유럽, "S"=아시아 (기본값 "1")
+        continent: 대륙구분(lnd_clsf). "1"=주요지수, "C"=아메리카, "E"=유럽, "S"=아시아 (기본값 "1")
     """
-    return call_tr(
-        config,
-        access_token,
-        "/api/v1/iva60140",
-        {"lnd_clsf": continent, "prd_clsf": "1"},
-    )
+    return call_tr(config, access_token, "/api/v1/iva60140", {"lnd_clsf": continent})
 
 
 def get_sector_ranking(config: KBOpenApiConfig, access_token: str, market: str = "1") -> dict:
@@ -580,37 +566,8 @@ def get_market_status(config: KBOpenApiConfig, access_token: str) -> dict:
 
 
 # ---------------------------------------------------------------------------
-# 5) 기타 (공휴일 / 종목마스터)
+# 5) 기타 (종목마스터)
 # ---------------------------------------------------------------------------
-
-
-def get_holiday_info(
-    config: KBOpenApiConfig,
-    access_token: str,
-    end_date: str,
-    country: str = "KR",
-) -> dict:
-    """SPAM2508 - 공휴일관리 조회.
-
-    Args:
-        end_date: 조회 종료일자 (YYYYMMDD, 필수)
-        country: ISO 국가코드 (예: "KR"=한국, "US"=미국). 기본값 "KR"
-    """
-    return call_tr(
-        config,
-        access_token,
-        "/api/v1/spam2508",
-        {
-            "hndl_clsf": "4",  # 처리구분: 4=조회
-            "iso_cd": country,
-            "dr_dt": "",
-            "end_dt": end_date,
-            "nxt_bsnss_dy": "",
-            "nxt_stlmt_dt": "",
-            "hldy_ccd": "",
-            "frgn_stk_ordr_psbl_f": "",
-        },
-    )
 
 
 def get_stock_master_info(config: KBOpenApiConfig, access_token: str, **extra_fields: str) -> dict:
